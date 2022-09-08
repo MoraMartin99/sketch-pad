@@ -20,4 +20,16 @@
     font-weight: 700;
     font-style: normal;
 }
+
+* {
+    font-family: "manrope";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+body {
+    height: 100vh;
+}
 /* --------------------------------------------------------------------------------------------------- */
