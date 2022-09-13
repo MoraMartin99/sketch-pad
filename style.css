@@ -72,7 +72,7 @@ nav {
     grid-area: r;
     background-color: var(--verde);
     display: grid;
-    grid-template-columns: 1fr 20px;
+    grid-template-columns: 1fr 200px;
     grid-template-areas: "a b";
     justify-items: end;
     align-items: center;
