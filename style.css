@@ -118,6 +118,16 @@ main {
 
 footer {
     grid-area: f;
+    background-color: var(--verde);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
 }
 
 /* --------------------------------------------------------------------------------------------------- */
