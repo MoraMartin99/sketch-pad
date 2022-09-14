@@ -25,6 +25,7 @@ html {
     --verde: #aeea00ff;
     --verde-sombra-1: #84b200ff;
     --azul: #00111fff;
+    --square: min(80vw, 75vh);
 }
 
 * {
@@ -110,6 +111,20 @@ nav {
 main {
     background-color: var(--azul);
     grid-area: m;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas {
+    width: var(--square);
+    height: var(--square);
+    border: 1px solid var(--verde);
+    display: grid;
+}
+
+.pixels {
+    background-color: white;
 }
 /* --------------------------------------------------------------------------------------------------- */
 
