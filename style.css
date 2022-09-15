@@ -26,6 +26,8 @@ html {
     --verde-sombra-1: #84b200ff;
     --azul: #00111fff;
     --square: min(80vw, 75vh);
+    --buttonSize: 35px;
+    --buttonSizeHover: 45px;
 }
 
 * {
@@ -82,27 +84,38 @@ nav {
 .menu {
     grid-area: a;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 35px);
     grid-template-areas: "a b";
     column-gap: 20px;
+    justify-items: center;
+    align-items: center;
 }
 
 .option {
     border: none;
-    width: 35px;
-    height: 35px;
+    width: var(--buttonSize);
+    height: var(--buttonSize);
     cursor: pointer;
     background-color: var(--verde);
+    background-position: center;
+    background-size: var(--buttonSize) var(--buttonSize);
+    background-repeat: no-repeat;
+}
+
+.option:hover {
+    background-color: var(--verde-sombra-1);
+    border-radius: 50%;
+    width: var(--buttonSizeHover);
+    height: var(--buttonSizeHover);
 }
 
 #info {
     background-image: url(./icon/info.svg);
-    background-size: 100% 100%;
 }
 
 #conf {
     background-image: url(./icon/settings.svg);
-    background-size: 100% 100%;
+}
 }
 /* --------------------------------------------------------------------------------------------------- */
 
@@ -143,6 +156,16 @@ footer {
     font-size: 25px;
     font-weight: 600;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github:hover {
+    background-color: var(--verde-sombra-1);
+    border-radius: 10px;
+    width: 103px;
+    height: 30px;
 }
 
 /* --------------------------------------------------------------------------------------------------- */
