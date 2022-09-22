@@ -140,6 +140,48 @@ nav {
 #conf {
     background-image: url(./icon/settings.svg);
 }
+
+.dropdownBox {
+    display: none;
+    position: relative;
+    border-radius: 20px;
+    background-color: var(--verde-sombra-1);
+    grid-area: c;
+    align-self: start;
+}
+
+.dropdownBox.info {
+    width: 500px;
+    height: 250px;
+}
+
+.dropdownBox.conf {
+    width: 200px;
+    height: 360px;
+}
+
+.ddTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ddPara {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.ddMiniPara {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.ddEmphasis {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 }
 /* --------------------------------------------------------------------------------------------------- */
 
