@@ -24,10 +24,15 @@
 html {
     --verde: #aeea00ff;
     --verde-sombra-1: #84b200ff;
+    --verde-sombra-2: rgb(108, 148, 0);
     --azul: #00111fff;
     --square: min(80vw, 75vh);
     --buttonSize: 35px;
     --buttonSizeHover: 45px;
+    --headerSize: 70px;
+    --footerSize: 40px;
+    --infoGap: 5px;
+    --confBorder: 0.5px;
 }
 
 * {
