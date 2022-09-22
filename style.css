@@ -48,7 +48,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr 40px;
+    grid-template-rows: var(--headerSize) 1fr var(--footerSize);
     grid-template-areas:
         "h"
         "m"
