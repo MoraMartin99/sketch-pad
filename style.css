@@ -90,16 +90,32 @@ nav {
 }
 
 .menu {
+    height: 100%;
     grid-area: a;
     display: grid;
     grid-template-columns: repeat(2, 35px);
     grid-template-areas: "a b";
     column-gap: 20px;
+}
+
+.menu li {
+    height: var(--headerSize);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35px;
+    grid-template-rows: calc((var(--headerSize) - var(--buttonSizeHover)) / 2) var(--buttonSizeHover) calc(
+            (var(--headerSize) - var(--buttonSizeHover)) / 2
+        );
+    grid-template-areas:
+        "a"
+        "b"
+        "c";
     justify-items: center;
     align-items: center;
 }
 
 .option {
+    grid-area: b;
     border: none;
     width: var(--buttonSize);
     height: var(--buttonSize);
