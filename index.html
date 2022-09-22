@@ -16,9 +16,35 @@
                 <ul class="menu">
                     <li>
                         <button id="info" class="option"></button>
+                        <div class="dropdownBox info">
+                            <p class="ddTitle">Lápiz (left-click para alternar con el cursor)</p>
+                            <p class="ddPara">
+                                Mueva el cursor por el canvas para colorear. Por defecto el color cambiará
+                                aleatoriamente por cada celda que pinte, en configuraciones puede fijar un color:
+                                <span class="ddEmphasis">Configuraciones > Color > Personalizado.</span>
+                            </p>
+                            <p class="ddTitle">Borrador (spacebar para alternar con el cursor)</p>
+                            <p class="ddPara">
+                                Ubique el cursor en una celda para borrar su color. Para borrar todo el canvas:
+                                <span class="ddEmphasis">Configuraciones > Canvas > Limpiar.</span>
+                            </p>
+                        </div>
                     </li>
                     <li>
                         <button id="conf" class="option"></button>
+                        <div class="dropdownBox conf show">
+                            <div class="gridArea">
+                                <p class="ddTitle">Grid</p>
+                                <form action="" class="gridForm">
+                                    <input type="text" class="textBox" />
+                                    <button id="plus" class="buttons" type="button"></button>
+                                    <button id="minus" class="buttons" type="button"></button>
+                                </form>
+                                <div class="ddMiniPara">lorem3</div>
+                            </div>
+                            <div class="colorArea"></div>
+                            <div class="canvasArea"></div>
+                        </div>
                     </li>
                 </ul>
             </nav>
