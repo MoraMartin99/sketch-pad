@@ -59,10 +59,13 @@ body {
 /* Header */
 /* --------------------------------------------------------------------------------------------------- */
 header {
+    height: var(--headerSize);
     grid-area: h;
     background-color: var(--verde);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px;
+    grid-auto-rows: max-content;
     grid-template-areas: "l c r";
     align-items: center;
     justify-items: center;
