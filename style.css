@@ -183,6 +183,11 @@ nav {
     font-weight: bold;
 }
 
+.menuLabel {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .dropdownBox.info.show {
     display: grid;
     width: 500px;
