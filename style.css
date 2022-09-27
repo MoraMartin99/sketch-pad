@@ -222,6 +222,16 @@ nav {
     grid-area: d;
 }
 
+.dropdownBox.conf.show {
+    display: grid;
+    grid-template-columns: 160px;
+    grid-template-rows: repeat(3, 120px);
+    grid-template-areas:
+        "grid"
+        "color"
+        "canvas";
+    justify-content: center;
+}
 }
 /* --------------------------------------------------------------------------------------------------- */
 
