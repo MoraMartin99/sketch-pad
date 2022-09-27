@@ -33,6 +33,7 @@ html {
     --footerSize: 40px;
     --infoGap: 5px;
     --confBorder: 0.5px;
+    --radioSize: 15px;
 }
 
 * {
