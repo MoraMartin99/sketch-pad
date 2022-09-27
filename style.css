@@ -232,6 +232,66 @@ nav {
         "canvas";
     justify-content: center;
 }
+
+.dropdownBox.conf.show .gridArea {
+    grid-area: grid;
+    border-bottom: var(--confBorder) solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "a"
+        "b"
+        "c";
+    justify-items: center;
+    align-items: center;
+}
+.gridArea .ddTitle {
+    grid-area: a;
+}
+.gridForm {
+    grid-area: b;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridForm .textBox {
+    box-sizing: border-box;
+    width: 60px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+.gridForm .buttons {
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    background-color: var(--verde-sombra-1);
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.gridForm .buttons:hover {
+    background-color: var(--verde-sombra-2);
+    cursor: pointer;
+}
+
+.gridForm #plus {
+    background-image: url(./icon/plus.svg);
+}
+
+.gridForm #minus {
+    background-image: url(./icon/minus.svg);
+}
+
+.gridArea .ddMiniPara {
+    grid-area: c;
+}
 }
 /* --------------------------------------------------------------------------------------------------- */
 
