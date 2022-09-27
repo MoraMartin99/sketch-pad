@@ -349,6 +349,49 @@ nav {
     grid-area: bottom;
 }
 
+.dropdownBox.conf.show .canvasArea {
+    grid-area: canvas;
+    border-top: var(--confBorder) solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr repeat(2, max-content);
+    grid-template-areas: "top" "middle" "bottom";
+    justify-items: center;
+    align-items: center;
+}
+
+.canvasArea:nth-child(1) {
+    grid-area: top;
+}
+
+.canvasArea:nth-child(2) {
+    grid-area: middle;
+}
+
+.canvasArea:nth-child(3) {
+    grid-area: bottom;
+}
+
+.canvasArea .canvasButton {
+    padding: 2px 7px;
+    border-style: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verde-sombra-1);
+}
+
+.canvasArea .canvasButton:hover {
+    cursor: pointer;
+    background-color: var(--verde-sombra-2);
+}
+
+.canvasArea .buttonLogo {
+    width: 20px;
+    margin-left: 5px;
+}
+
 /* --------------------------------------------------------------------------------------------------- */
 
 /* Main */
