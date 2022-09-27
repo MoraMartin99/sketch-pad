@@ -292,7 +292,63 @@ nav {
 .gridArea .ddMiniPara {
     grid-area: c;
 }
+
+.dropdownBox.conf.show .colorArea {
+    grid-area: color;
+    border-top: var(--confBorder) solid black;
+    border-bottom: var(--confBorder) solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+        "top"
+        "middle"
+        "bottom";
+    justify-items: center;
+    align-items: center;
 }
+
+.colorArea .ddTitle {
+    grid-area: top;
+}
+
+.colorArea .colorForm {
+    grid-area: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.radioOption {
+    appearance: none;
+    margin-left: 5px;
+    width: var(--radioSize);
+    height: var(--radioSize);
+    background-color: white;
+    border-radius: 20%;
+    border: solid 1px black;
+    display: inline-flex;
+    place-content: center;
+}
+
+.radioOption:checked {
+    background-color: black;
+    background-position: center;
+    background-size: var(--radioSize);
+    background-repeat: no-repeat;
+    background-image: url(./icon/check.svg);
+}
+
+.radioGroup,
+.radioGroup * {
+    cursor: pointer;
+}
+
+.colorArea .color {
+    grid-area: bottom;
+}
+
 /* --------------------------------------------------------------------------------------------------- */
 
 /* Main */
