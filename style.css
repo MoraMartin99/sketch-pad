@@ -134,6 +134,13 @@ nav {
     height: var(--buttonSizeHover);
 }
 
+.option.clicked {
+    background-color: var(--verde-sombra-1);
+    border-radius: 50%;
+    width: var(--buttonSizeHover);
+    height: var(--buttonSizeHover);
+}
+
 #info {
     background-image: url(./icon/info.svg);
 }
