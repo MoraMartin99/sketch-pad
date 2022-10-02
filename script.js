@@ -49,7 +49,6 @@ let hideAllMenu = () => {
 };
 
 let hideMenuOnClick = (e) => {
-    console.log("hideMenuOnClick se ejecuto");
     const eventElement = e.currentTarget;
     const clickedElement = e.target;
 
@@ -60,7 +59,6 @@ let hideMenuOnClick = (e) => {
 };
 
 let showMenu = (e) => {
-    console.log("showMenu se ejecuto");
     const optionClass = "clicked";
     const dropDownClass = "show";
     const button = e.currentTarget;
