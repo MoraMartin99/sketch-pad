@@ -36,3 +36,48 @@ let removeClass = (element, className) => {
     element.classList.remove(className);
 };
 
+let hideAllMenu = () => {
+    const optionClass = "clicked";
+    const dropDownClass = "show";
+
+    optionArr.forEach((option) => {
+        removeClass(option, optionClass);
+    });
+    dropDownArr.forEach((dropDown) => {
+        removeClass(dropDown, dropDownClass);
+    });
+};
+
+let hideMenuOnClick = (e) => {
+    console.log("hideMenuOnClick se ejecuto");
+    const eventElement = e.currentTarget;
+    const clickedElement = e.target;
+
+    if (!clickedElement.matches(".dropdownBox, .dropdownBox *")) {
+        hideAllMenu();
+        eventElement.removeEventListener("click", hideMenuOnClick);
+    }
+};
+
+let showMenu = (e) => {
+    console.log("showMenu se ejecuto");
+    const optionClass = "clicked";
+    const dropDownClass = "show";
+    const button = e.currentTarget;
+    let dropDown;
+
+    if (button.id === "info") {
+        dropDown = dropDownInfo;
+    } else if (button.id === "conf") {
+        dropDown = dropDownConf;
+    }
+    e.stopImmediatePropagation();
+    hideAllMenu();
+    addClass(button, optionClass);
+    addClass(dropDown, dropDownClass);
+    body.addEventListener("click", hideMenuOnClick);
+};
+
+optionArr.forEach((item) => {
+    item.addEventListener("click", showMenu);
+});
