@@ -27,3 +27,12 @@ let removeAllChildren = (parent) => {
         child.remove();
     });
 };
+
+let addClass = (element, className) => {
+    element.classList.add(className);
+};
+
+let removeClass = (element, className) => {
+    element.classList.remove(className);
+};
+
