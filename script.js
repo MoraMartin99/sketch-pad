@@ -78,6 +78,16 @@ let showMenu = (e) => {
     body.addEventListener("click", hideMenuOnClick);
 };
 
+let printAllEventListener = () => {
+    let elementArr = Array.from(document.querySelectorAll("body, body *"));
+    elementArr.forEach((element) => {
+        if (Object.keys(getEventListeners(element)).length > 0) {
+            console.log(getEventListeners(element));
+            console.log(element);
+        }
+    });
+};
+
 optionArr.forEach((item) => {
     item.addEventListener("click", showMenu);
 });
