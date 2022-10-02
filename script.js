@@ -1,7 +1,12 @@
 /* variables globales */
 /* --------------------------------------------------------------------------------------------------- */
-let canvas = document.querySelector("#canvas");
+const canvas = document.querySelector("#canvas");
 let gridBase;
+const optionArr = Array.from(document.querySelectorAll(".option"));
+const dropDownArr = Array.from(document.querySelectorAll(".dropdownBox"));
+const dropDownInfo = document.querySelector(".dropdownBox.info");
+const dropDownConf = document.querySelector(".dropdownBox.conf");
+const body = document.querySelector("body");
 /* --------------------------------------------------------------------------------------------------- */
 
 let setGridTemplates = (element, base) => {
