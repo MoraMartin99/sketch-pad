@@ -267,10 +267,16 @@ nav {
 }
 
 .gridForm .textBox {
-    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
     width: 60px;
     height: 25px;
     border: 1px solid black;
+}
+
+.gridForm .textBox:invalid {
+    color: var(--invalid);
 }
 
 .gridForm .buttons {
