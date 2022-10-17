@@ -50,6 +50,41 @@ let resetCanvas = () => {
     setGridTemplates(canvas, gridBase);
     addDivChildren(canvas, Math.pow(gridBase, 2), "pixels");
 };
+
+let getRandomRGB = () => {
+    return `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(
+        Math.random() * 255
+    )})`;
+};
+
+let setRandomBGColor = (element) => {
+    element.style.backgroundColor = getRandomRGB();
+};
+
+let handleBackgroundColor = (e) => {
+    const target = e.target;
+    if (target.matches("#canvas .pixels")) {
+        if (randomColorRadio.checked) {
+            setRandomBGColor(target);
+        } else if (customColorRadio.checked) {
+            setColorHEXFromPicker(target);
+        }
+    }
+};
+
+let resetBackgroundColor = (e) => {
+    const target = e.target;
+    if (target.matches("#canvas .pixels")) {
+        target.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+};
+
+let getColorHEXFromPicker = (pickerElement) => {
+    return pickerElement.value;
+};
+
+let setColorHEXFromPicker = (element) => {
+    element.style.backgroundColor = getColorHEXFromPicker(colorPicker);
 };
 
 let hideAllMenu = () => {
