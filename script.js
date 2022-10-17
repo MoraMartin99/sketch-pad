@@ -164,7 +164,7 @@ let hideMenuOnClick = (e) => {
     }
 };
 
-let showMenu = (e) => {
+let handleMenu = (e) => {
     const optionClass = "clicked";
     const dropDownClass = "show";
     const button = e.currentTarget;
@@ -175,11 +175,20 @@ let showMenu = (e) => {
     } else if (button.id === "conf") {
         dropDown = dropDownConf;
     }
+
     e.stopImmediatePropagation();
-    hideAllMenu();
-    addClass(button, optionClass);
-    addClass(dropDown, dropDownClass);
-    body.addEventListener("click", hideMenuOnClick);
+
+    if (!button.classList.contains(optionClass) && !dropDown.classList.contains(dropDownClass)) {
+        hideAllMenu();
+        addClass(button, optionClass);
+        addClass(dropDown, dropDownClass);
+        body.addEventListener("click", hideMenuOnClick);
+    } else {
+        hideAllMenu();
+        body.removeEventListener("click", hideMenuOnClick);
+    }
+};
+
 };
 
 let printAllEventListener = () => {
