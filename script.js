@@ -274,6 +274,39 @@ let printAllEventListener = () => {
     });
 };
 
-optionArr.forEach((item) => {
-    item.addEventListener("click", showMenu);
-});
+/* --------------------------------------------------------------------------------------------------- */
+
+/* Print */
+/* --------------------------------------------------------------------------------------------------- */
+
+let addFooterForPrint = () => {
+    const printFooter = document.createElement("div");
+    addClass(printFooter, "printFooter");
+    body.append(printFooter);
+    printFooter.innerHTML = `<p class="printP">Oscar Martin Mora </p>
+    <img src="./icon/github.svg" alt="github logo" class="printLogo" />`;
+};
+
+let removeFooterForPrint = () => {
+    const printFooter = document.querySelector(".printFooter");
+    printFooter.remove();
+};
+
+let setPrint = () => {
+    addFooterForPrint();
+    const promise = new Promise((resolve, reject) => {
+        const imgPrint = document.querySelector(".printLogo");
+        imgPrint.addEventListener("load", () => {
+            resolve();
+        });
+    })
+        .then(() => {
+            print();
+        })
+        .catch(() => {
+            console.log("no se cargo la imagen para print");
+        });
+};
+
+/* --------------------------------------------------------------------------------------------------- */
+
