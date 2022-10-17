@@ -1,12 +1,20 @@
 /* variables globales */
 /* --------------------------------------------------------------------------------------------------- */
 const canvas = document.querySelector("#canvas");
-let gridBase;
 const optionArr = Array.from(document.querySelectorAll(".option"));
 const dropDownArr = Array.from(document.querySelectorAll(".dropdownBox"));
 const dropDownInfo = document.querySelector(".dropdownBox.info");
 const dropDownConf = document.querySelector(".dropdownBox.conf");
 const body = document.querySelector("body");
+const textBox = document.querySelector(".textBox");
+const gridForm = document.querySelector(".gridForm");
+const colorPicker = document.querySelector(".colorPicker");
+const randomColorRadio = document.querySelector(".radioOption#random");
+const customColorRadio = document.querySelector(".radioOption#custom");
+const canvasArea = document.querySelector(".canvasArea");
+const gridValueMessage = document.querySelector("#gridValueMessage");
+/* --------------------------------------------------------------------------------------------------- */
+
 /* --------------------------------------------------------------------------------------------------- */
 
 let setGridTemplates = (element, base) => {
