@@ -92,6 +92,56 @@ let calculateGridBase = () => {
     return Math.sqrt(pixelArr.length);
 };
 
+let setCustomCursor = (element, cursor) => {
+    element.style.cursor = cursor;
+};
+
+let togglePenCursor = (e) => {
+    const target = e.target;
+    const defaultCursor = "auto";
+    const customCursor = 'url("./icon/pen.svg") 0 20, auto';
+
+    if (target.matches("#canvas, #canvas *")) {
+        if (canvas.style.cursor !== customCursor) {
+            handleBackgroundColor(e);
+            canvas.removeEventListener("mouseover", resetBackgroundColor);
+            setCustomCursor(canvas, customCursor);
+            canvas.addEventListener("mouseover", handleBackgroundColor);
+        } else if (canvas.style.cursor === customCursor) {
+            canvas.removeEventListener("mouseover", handleBackgroundColor);
+            setCustomCursor(canvas, defaultCursor);
+        }
+    }
+};
+
+let toggleEraserCursor = (e) => {
+    if (e.key === " " || e.key === "Spacebar") {
+        const defaultCursor = "auto";
+        const customCursor = 'url("./icon/eraser2.svg") 10 10, auto';
+
+        if (canvas.style.cursor !== customCursor) {
+            canvas.removeEventListener("mouseover", handleBackgroundColor);
+            setCustomCursor(canvas, customCursor);
+            canvas.addEventListener("mouseover", resetBackgroundColor);
+        } else if (canvas.style.cursor === customCursor) {
+            setCustomCursor(canvas, defaultCursor);
+            canvas.removeEventListener("mouseover", resetBackgroundColor);
+        }
+    }
+};
+
+let addSpacebarListener = () => {
+    document.addEventListener("keyup", toggleEraserCursor);
+};
+
+let removeSpacebarListener = () => {
+    document.removeEventListener("keyup", toggleEraserCursor);
+};
+/* --------------------------------------------------------------------------------------------------- */
+
+/* Menu */
+/* --------------------------------------------------------------------------------------------------- */
+
 let hideAllMenu = () => {
     const optionClass = "clicked";
     const dropDownClass = "show";
