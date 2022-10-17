@@ -310,3 +310,32 @@ let setPrint = () => {
 
 /* --------------------------------------------------------------------------------------------------- */
 
+let applyInitialState = () => {
+    optionArr.forEach((item) => {
+        item.addEventListener("click", handleMenu);
+    });
+
+    gridForm.addEventListener("click", modifytextBoxValue);
+
+    textBox.addEventListener("input", setCanvas);
+
+    canvas.addEventListener("click", togglePenCursor);
+
+    canvas.addEventListener("mouseenter", addSpacebarListener);
+
+    canvas.addEventListener("mouseleave", removeSpacebarListener);
+
+    textBox.addEventListener("keydown", disableSubmitOnEnter);
+
+    canvasArea.addEventListener("click", handleCanvasArea);
+
+    window.addEventListener("afterprint", removeFooterForPrint);
+
+    customColorRadio.addEventListener("input", toggleColorPicker);
+
+    randomColorRadio.addEventListener("input", toggleColorPicker);
+
+    setCanvas();
+};
+
+applyInitialState();
