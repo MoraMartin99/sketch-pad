@@ -15,6 +15,7 @@ const canvasArea = document.querySelector(".canvasArea");
 const gridValueMessage = document.querySelector("#gridValueMessage");
 /* --------------------------------------------------------------------------------------------------- */
 
+/* Canvas */
 /* --------------------------------------------------------------------------------------------------- */
 
 let setGridTemplates = (element, base) => {
@@ -30,10 +31,7 @@ let addDivChildren = (parent, nChild, classList) => {
 };
 
 let removeAllChildren = (parent) => {
-    let childrenArr = Array.from(parent.querySelectorAll("*"));
-    childrenArr.forEach((child) => {
-        child.remove();
-    });
+    parent.innerHTML = "";
 };
 
 let addClass = (element, className) => {
