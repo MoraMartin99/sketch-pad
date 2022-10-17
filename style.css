@@ -34,6 +34,7 @@ html {
     --infoGap: 5px;
     --confBorder: 0.5px;
     --radioSize: 15px;
+    --invalid: #c40000;
 }
 
 * {
