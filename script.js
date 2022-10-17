@@ -234,6 +234,16 @@ let disableSubmitOnEnter = (e) => {
     }
 };
 
+let handleCanvasArea = (e) => {
+    let target = e.target;
+
+    if (target.matches(".canvasButton.clean, .canvasButton.clean *")) {
+        resetCanvas();
+    } else if (target.matches(".canvasButton.print, .canvasButton.print *")) {
+        setPrint();
+    }
+};
+
 };
 
 let printAllEventListener = () => {
