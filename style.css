@@ -371,6 +371,10 @@ nav {
     grid-area: bottom;
 }
 
+.colorPicker {
+    display: none;
+}
+
 .dropdownBox.conf.show .canvasArea {
     grid-area: canvas;
     border-top: var(--confBorder) solid black;
