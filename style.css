@@ -279,6 +279,14 @@ nav {
     color: var(--invalid);
 }
 
+#gridValueMessage {
+    text-align: center;
+}
+
+#gridValueMessage.invalid {
+    color: var(--invalid);
+}
+
 .gridForm .buttons {
     box-sizing: border-box;
     width: 25px;
