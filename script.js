@@ -118,11 +118,13 @@ let toggleEraserCursor = (e) => {
     if (e.key === " " || e.key === "Spacebar") {
         const defaultCursor = "auto";
         const customCursor = 'url("./icon/eraser2.svg") 10 10, auto';
+        const hoverPixel = document.querySelector(".pixels:hover");
 
         if (canvas.style.cursor !== customCursor) {
             canvas.removeEventListener("mouseover", handleBackgroundColor);
             setCustomCursor(canvas, customCursor);
             canvas.addEventListener("mouseover", resetBackgroundColor);
+            hoverPixel.style.backgroundColor = "rgb(255, 255, 255)";
         } else if (canvas.style.cursor === customCursor) {
             setCustomCursor(canvas, defaultCursor);
             canvas.removeEventListener("mouseover", resetBackgroundColor);
