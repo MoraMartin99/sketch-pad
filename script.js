@@ -34,12 +34,22 @@ let removeAllChildren = (parent) => {
     parent.innerHTML = "";
 };
 
-let addClass = (element, className) => {
-    element.classList.add(className);
+let setCanvas = () => {
+    if (isValid(textBox) && textBox.value !== "") {
+        let gridBase = parseInt(textBox.value);
+        removeAllChildren(canvas);
+        setGridTemplates(canvas, gridBase);
+        addDivChildren(canvas, Math.pow(gridBase, 2), "pixels");
+    }
+    showGridBase();
 };
 
-let removeClass = (element, className) => {
-    element.classList.remove(className);
+let resetCanvas = () => {
+    let gridBase = calculateGridBase();
+    removeAllChildren(canvas);
+    setGridTemplates(canvas, gridBase);
+    addDivChildren(canvas, Math.pow(gridBase, 2), "pixels");
+};
 };
 
 let hideAllMenu = () => {
