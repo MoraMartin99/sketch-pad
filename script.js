@@ -87,6 +87,11 @@ let setColorHEXFromPicker = (element) => {
     element.style.backgroundColor = getColorHEXFromPicker(colorPicker);
 };
 
+let calculateGridBase = () => {
+    const pixelArr = Array.from(document.querySelectorAll("#canvas > *"));
+    return Math.sqrt(pixelArr.length);
+};
+
 let hideAllMenu = () => {
     const optionClass = "clicked";
     const dropDownClass = "show";
