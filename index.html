@@ -37,7 +37,12 @@
                             <div class="gridArea">
                                 <p class="ddTitle">Grid</p>
                                 <form action="" class="gridForm">
-                                    <input type="text" class="textBox" />
+                                    <input
+                                        type="text"
+                                        class="textBox"
+                                        value="16"
+                                        pattern="^[1-9][0-9]{0,1}$|^[1-9][0][0]{0,1}$"
+                                    />
                                     <button id="plus" class="buttons" type="button"></button>
                                     <button id="minus" class="buttons" type="button"></button>
                                 </form>
