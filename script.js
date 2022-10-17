@@ -244,6 +244,14 @@ let handleCanvasArea = (e) => {
     }
 };
 
+let toggleColorPicker = () => {
+    if (customColorRadio.checked) {
+        colorPicker.style.display = "initial";
+    } else {
+        colorPicker.style.display = "none";
+    }
+};
+/* --------------------------------------------------------------------------------------------------- */
 };
 
 let printAllEventListener = () => {
