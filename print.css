@@ -1,0 +1,50 @@
+.printFooter {
+    display: none;
+}
+@media print {
+    /* Ocultar elementos*/
+    /* ---------------------------------------------------------------------------------------------------*/
+    header,
+    footer {
+        display: none;
+    }
+    /* ---------------------------------------------------------------------------------------------------*/
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, max-content);
+        grid-template-areas:
+            "top"
+            "middle"
+            "bottom";
+        justify-items: center;
+        gap: 40px;
+        justify-content: center;
+        align-content: center;
+    }
+
+    body::before {
+        content: "Sketch pad";
+        grid-area: top;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .printFooter {
+        grid-area: bottom;
+        display: flex;
+    }
+
+    .printP {
+        font-size: 20px;
+    }
+
+    .printLogo {
+        width: 20px;
+        margin-left: 5px;
+    }
+    main {
+        grid-area: middle;
+    }
+}
