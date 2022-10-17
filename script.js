@@ -189,6 +189,51 @@ let handleMenu = (e) => {
     }
 };
 
+let isValid = (element) => {
+    return element.checkValidity();
+};
+
+let modifytextBoxValue = (e) => {
+    const button = e.target;
+    if (isValid(textBox)) {
+        if (button.matches("#plus, #plus *")) {
+            if (textBox.value == "") {
+                textBox.value = 1;
+            } else if (textBox.value !== "100") {
+                textBox.value = parseInt(textBox.value) + 1;
+            }
+            setCanvas();
+        } else if (button.matches("#minus, #minus *")) {
+            if (textBox.value == "") {
+                textBox.value = 100;
+            } else if (textBox.value !== "1") {
+                textBox.value = parseInt(textBox.value) - 1;
+            }
+            setCanvas();
+        }
+    }
+};
+
+let showGridBase = () => {
+    let text = "";
+    let invalidClass = "invalid";
+    if (isValid(textBox) && textBox.value !== "") {
+        let gridBase = parseInt(textBox.value);
+        text = `rejilla de ${gridBase} X ${gridBase}`;
+        gridValueMessage.classList.remove(invalidClass);
+    } else if (!isValid(textBox)) {
+        text = "favor digitar un numero entre 1 y 100";
+        gridValueMessage.classList.add(invalidClass);
+    }
+    gridValueMessage.innerText = text;
+};
+
+let disableSubmitOnEnter = (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+    }
+};
+
 };
 
 let printAllEventListener = () => {
