@@ -470,3 +470,45 @@ footer {
 }
 
 /* --------------------------------------------------------------------------------------------------- */
+
+/* Intro */
+/* --------------------------------------------------------------------------------------------------- */
+.blur {
+    filter: blur(3px) brightness(70%);
+}
+
+.intro {
+    display: grid;
+    width: 550px;
+    height: 350px;
+    border-radius: 20px;
+    background-color: var(--verde-sombra-1);
+    grid-template-columns: calc(100% - 20px);
+    grid-template-rows: 50px repeat(4, max-content) 70px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    row-gap: var(--infoGap);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.introTitle {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.introButton {
+    width: 83px;
+    height: 33px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: var(--verde-sombra-1);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* --------------------------------------------------------------------------------------------------- */
