@@ -13,6 +13,9 @@ const randomColorRadio = document.querySelector(".radioOption#random");
 const customColorRadio = document.querySelector(".radioOption#custom");
 const canvasArea = document.querySelector(".canvasArea");
 const gridValueMessage = document.querySelector("#gridValueMessage");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
 /* --------------------------------------------------------------------------------------------------- */
 
 /* Canvas */
@@ -310,6 +313,42 @@ let setPrint = () => {
         });
 };
 
+let addIntro = () => {
+    const intro = document.createElement("div");
+    addClass(intro, "intro");
+    addClass(main, "blur");
+    addClass(header, "blur");
+    addClass(footer, "blur");
+    intro.innerHTML = `<p class="introTitle">¡Bienvenido a Sketch pad!</p>
+            <p class="ddTitle">Lápiz (left-click para alternar con el cursor)</p>
+            <p class="ddPara">
+                Mueva el cursor por el canvas para colorear. Por defecto el color cambiará aleatoriamente por cada celda
+                que pinte, en configuraciones puede fijar un color:
+                <span class="ddEmphasis">Configuraciones > Color > Personalizado.</span>
+            </p>
+            <p class="ddTitle">Borrador (spacebar para alternar con el cursor)</p>
+            <p class="ddPara">
+                Ubique el cursor en una celda para borrar su color. Para borrar todo el canvas:
+                <span class="ddEmphasis">Configuraciones > Canvas > Limpiar.</span>
+            </p>
+            <button class="introButton" type="button">OK</button>`;
+    body.appendChild(intro);
+    body.addEventListener("click", removeIntro);
+};
+
+let removeIntro = (e) => {
+    const target = e.target;
+    if (target.matches(".intro > button") || !target.matches(".intro, .intro > p,.intro > p *")) {
+        const intro = document.querySelector("body > div.intro");
+        intro.remove();
+        removeClass(main, "blur");
+        removeClass(header, "blur");
+        removeClass(footer, "blur");
+        body.removeEventListener("click", removeIntro);
+        applyInitialState();
+    }
+};
+
 /* --------------------------------------------------------------------------------------------------- */
 
 let applyInitialState = () => {
@@ -340,4 +379,4 @@ let applyInitialState = () => {
     setCanvas();
 };
 
-applyInitialState();
+addIntro();
